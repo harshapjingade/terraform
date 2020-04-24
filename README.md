@@ -3,7 +3,8 @@ Please follow the below steps to configure terraform with AWS and creating insta
 
 Step1: aws configure --profile terraform
 
-#provide the values
+#provide the values:
+
 AWS Access Key ID [None]: <Access Key Id>
 AWS Secret Access Key [None]: <Secret Access Key>
 Default region name [None]: <Region>
