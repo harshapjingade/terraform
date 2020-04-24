@@ -6,9 +6,13 @@ Step1: aws configure --profile terraform
 #provide the values:
 
 AWS Access Key ID [None]: <Access Key Id>
+  
 AWS Secret Access Key [None]: <Secret Access Key>
+  
 Default region name [None]: <Region>
+  
 Default output format [None]: json
+
 
 Step2: terraform apply provider_aws.tf 
 
