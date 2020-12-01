@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('TerraformInit'){
             steps {
-                dir('Terraform_Examples/Example2sep/'){
+                dir('Terraform_Examples/Example2/'){
                     sh 'terraform --version'
                     sh "terraform init"
                 }
@@ -25,14 +25,14 @@ pipeline {
         }
         stage('TerraformValidate'){
             steps {
-                dir('Terraform_Examples/Example2sep/'){
+                dir('Terraform_Examples/Example2/'){
                     sh 'terraform validate'
                 }
             }
         }
         stage('TerraformPlan'){
             steps {
-                dir('Terraform_Examples/Example2sep/'){
+                dir('Terraform_Examples/Example2/'){
                         sh "terraform plan -out terraform.tfplan;echo \$? > status"
                             
                 }
@@ -47,13 +47,13 @@ pipeline {
                         apply = true
                     } catch (err) {
                         apply = false
-                        dir('Terraform_Examples/Example2sep/'){
+                        dir('Terraform_Examples/Example2/'){
                             sh "terraform destroy -auto-approve"
                         }
                         currentBuild.result = 'UNSTABLE'
                     }
                     if(apply){
-                        dir('Terraform_Examples/Example2sep/'){
+                        dir('Terraform_Examples/Example2/'){
                             unstash "terraform-plan"
                             sh 'terraform apply terraform.tfplan'
                         }
