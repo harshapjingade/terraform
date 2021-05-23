@@ -2,7 +2,7 @@ terraform workspace list // to list the workspace
 
 terraform workspace new dev // creating dev workspace
 
-terraform workspace new prod // creatinf prod workspace
+terraform workspace new prod // creating prod workspace
 
 terraform workspace select dev // switching to dev workspace
 
